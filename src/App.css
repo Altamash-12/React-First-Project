@@ -6,7 +6,7 @@
 
 body{
   font-family: sans-serif;
-  background-color: #021912;
+  background-color: #021d15;
   color: #fff;
 }
 
@@ -35,6 +35,7 @@ input::placeholder{
 }
 
 .createTodoBtn{
+  cursor: pointer;
   font-size: 1rem;
   background: transparent;
   color: inherit;
@@ -43,28 +44,31 @@ input::placeholder{
   border-radius: 6px;
 }
 
-select{
-  background: transparent;
-  color: #fff;
-  border-radius: 6px;
-  padding: .8rem;
+.select-container{
   border: 1px solid #fff;
+  border-radius: 6px;
+  padding-right: .8rem;
+  overflow: hidden;
+  background-color: #021912;
+}
+
+select{
+  background-color: #021912;
+  padding: .8rem;
+  color: #fff;
+  border: none;
+}
+
+option{
+  color: #021d15;
+  background-color: #e6f4f0;
 }
 
 .todo-line{
   display: flex;
   justify-content: space-between;
   gap: 1rem;
-  margin-bottom: 5rem;
-}
-
-.card{
-  display: flex;
-  justify-content: space-between;
-  padding: 1rem;
-  border: 1px solid #ff922b;
-  border-radius: 6px;
-  margin-bottom: 1.5rem;
+  margin-bottom: 1rem;
 }
 
 .App{
@@ -98,6 +102,7 @@ button{
 .pending,
 .completed{
   font-size: 1rem;
+  text-transform: uppercase;
 }
 
 .edit-btn{
@@ -108,7 +113,6 @@ button{
   cursor: pointer;
   color: #63e6be;
   text-decoration: underline;
-  text-transform: uppercase;
 }
 
 .delete-btn{
@@ -119,7 +123,6 @@ button{
   color: #fa5252;
   text-decoration: underline;
   cursor: pointer;
-  text-transform: uppercase;
 }
 
 .completed{
@@ -130,17 +133,48 @@ button{
   cursor: pointer;
   color: #ff9d40;
   text-decoration: underline;
-  text-transform: uppercase;
 }
 
 .pending{
-  color: #ffe9d5;
+  color: #fff6ee;
+}
+
+.card{
+  display: flex;
+  justify-content: space-between;
+  padding: 1rem;
+  border-radius: 6px;
+  margin: 1.5rem 0;
+  border: 1px solid #ffe9d5;
+}
+
+.card-pending{
+  display: flex;
+  justify-content: space-between;
+  padding: 1rem;
+  border-radius: 6px;
+  margin: 1.5rem 0;
+  border: 2px solid #fff6ee;
+}
+
+.card-completed{
+  display: flex;
+  justify-content: space-between;
+  padding: 1rem;
+  border-radius: 6px;
+  margin: 1.5rem 0;
+  border: 2px solid #e68327;
 }
 
 .pending:hover{
   cursor: pointer;
   text-decoration: underline;
-  text-transform: uppercase;
+}
+
+.error{
+  color: rgb(252, 1, 1);
+  font-size: 2rem;
+  text-align: center;
 }
 
 /* 560 --> Phones */
@@ -162,20 +196,17 @@ button{
     width: 60%;
   }
 
-  .card{
+  .card, .card-completed,.card-pending{
     flex-direction: column;
     align-items: center;
     gap: 1.5rem;
     width: 75%;
     margin: auto;
+    margin-bottom: 1rem;
   }
 
   .todo-buttons{
     flex-direction: column;
-  }
-
-  .App{
-    padding-right: 16px;
   }
 
 .todoText,
